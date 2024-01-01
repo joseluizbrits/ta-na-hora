@@ -3,6 +3,11 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
   :root {
     --white: #FFFFFF;
+    --primary: #001542;
+    --secundary: #FFB30D;
+    --warning: #FF2D2D;
+    --gray: #A6A6A6;
+    --bg: #242B3A 
   }
 
  * {
@@ -12,13 +17,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background-color: #910b91;
+    background-color: var(--bg);
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
 
   a {
     text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
   }
 
   li {
