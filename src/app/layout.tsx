@@ -3,6 +3,7 @@ import { poppins } from "./lib/fonts";
 import StylesProvider from "./styles/StylesProvider";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Tá na Hora",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <StylesProvider>
           <Header />
           {children}
+          <Footer />
         </StylesProvider>
       </body>
     </html>
