@@ -20,7 +20,6 @@ export const Item = styled.button`
       display: block;
       width: 100%;
       height: 1px;
-      margin-top: 4px;
       background-color: var(--secundary);
     }
   }

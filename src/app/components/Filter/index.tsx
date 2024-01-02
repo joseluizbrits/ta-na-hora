@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+
+import { poppins } from "@/app/lib/fonts";
 import { Container, Item } from "./styles";
+import { useState } from "react";
 
 function Filter() {
-  const [activeItem, setActiveItem] = useState<string>("by-all");
+  const [activeItem, setActiveItem] = useState("by-all");
 
   const handleActiveItem = (e: React.MouseEvent<HTMLButtonElement>) => {
     setActiveItem(e.currentTarget.id);
@@ -18,7 +20,7 @@ function Filter() {
             onClick={handleActiveItem}
             className={activeItem === "by-all" ? "active" : ""}
           >
-            Todos
+            <span className={poppins.className}>Todos</span>
           </Item>
         </li>
         <li>
@@ -27,7 +29,7 @@ function Filter() {
             onClick={handleActiveItem}
             className={activeItem === "by-gold" ? "active" : ""}
           >
-            Ouro
+            <span className={poppins.className}>Ouro</span>
           </Item>
         </li>
         <li>
@@ -36,7 +38,7 @@ function Filter() {
             onClick={handleActiveItem}
             className={activeItem === "by-steel" ? "active" : ""}
           >
-            Aço
+            <span className={poppins.className}>Aço</span>
           </Item>
         </li>
         <li>
@@ -45,7 +47,7 @@ function Filter() {
             onClick={handleActiveItem}
             className={activeItem === "by-ceramic" ? "active" : ""}
           >
-            Cerâmica
+            <span className={poppins.className}>Cerâmica</span>
           </Item>
         </li>
       </ul>
