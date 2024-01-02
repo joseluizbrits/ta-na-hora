@@ -1,26 +1,38 @@
 "use client";
 
 import { Card, Content, ImageWrapper, Shadow } from "./styles";
+import { IWatch } from "@/app/interfaces/watch";
 
 import Image from "next/image";
-import img from "../../../../public/rolex-cellini.jpg";
 import Button from "../Button";
 import ArrowCircle from "@/app/icons/ArrowCircle";
+import Link from "next/link";
 
-function WatchCard() {
+function WatchCard({ watch }: { watch: IWatch }) {
   return (
     <Card>
-      <ImageWrapper>
-        <Image src={img.src} fill alt="Relógio Rolex Cellini Time" />
-        <Shadow>
-          <span>Saiba mais</span>
-          <ArrowCircle />
-        </Shadow>
-      </ImageWrapper>
+      <Link href={`/${watch._id}`}>
+        <ImageWrapper>
+          <Image
+            src={watch.image}
+            priority
+            fill
+            sizes="33vw"
+            alt="Relógio Rolex Cellini Time"
+          />
+          <Shadow>
+            <span>Saiba mais</span>
+            <ArrowCircle />
+          </Shadow>
+        </ImageWrapper>
+      </Link>
+
       <Content>
-        <h2>Rolex Cellini Time</h2>
-        <p>50407RBR 39MM 18K Gold Brown Dial Box Papers</p>
-        <span>R$ 34.560</span>
+        <h2>
+          {watch.brand} {watch.model}
+        </h2>
+        <p>{watch.desc}</p>
+        <span>R$ {watch.price}</span>
       </Content>
       <Button>Adicionar à sacola</Button>
     </Card>

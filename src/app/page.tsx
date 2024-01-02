@@ -1,11 +1,11 @@
 import Filter from "./components/Filter";
-import WatchCard from "./components/WatchCard";
+import { Watches } from "./components/Watches";
 
 export default function Home() {
   return (
     <>
       <Filter />
-      <WatchCard />
+      <Watches />
     </>
   );
 }
