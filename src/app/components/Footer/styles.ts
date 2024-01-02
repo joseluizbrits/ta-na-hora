@@ -10,9 +10,6 @@ export const Container = styled.footer`
   align-items: center;
   gap: 20px;
 
-  position: absolute;
-  bottom: 0;
-
   span {
     color: var(--white);
   }
