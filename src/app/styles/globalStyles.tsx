@@ -22,6 +22,10 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  main {
+    padding: 64px 160px;
+  }
+
   a {
     text-decoration: none;
   }
@@ -29,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
   button {
     background: none;
     border: none;
+    cursor: pointer;
   }
 
   li {
