@@ -11,7 +11,7 @@ import Link from "next/link";
 function WatchCard({ watch }: { watch: IWatch }) {
   return (
     <Card>
-      <Link href={`/${watch._id}`}>
+      <Link href={`${watch._id}`}>
         <ImageWrapper>
           <Image
             src={watch.image}

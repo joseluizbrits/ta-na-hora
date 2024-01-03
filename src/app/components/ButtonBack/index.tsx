@@ -9,7 +9,7 @@ function ButtonBack() {
   const router = useRouter();
 
   return (
-    <Wrapp onClick={() => router.push("./")}>
+    <Wrapp onClick={() => router.push("/")}>
       <ArrowBack />
       <span className={poppins.className}>voltar</span>
     </Wrapp>
