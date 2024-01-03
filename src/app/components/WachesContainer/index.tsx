@@ -1,12 +1,12 @@
 "use client";
 
 import { Container } from "./styles";
-import { Watches } from "../Watches";
+import { FetchWatches } from "../FetchWatches";
 
 function WatchesContainer() {
   return (
     <Container>
-      <Watches />
+      <FetchWatches />
     </Container>
   );
 }

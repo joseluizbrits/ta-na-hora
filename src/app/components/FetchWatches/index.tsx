@@ -3,9 +3,7 @@ import { IWatch } from "@/app/interfaces/watch";
 
 async function getWatches(): Promise<IWatch[] | undefined> {
   try {
-    const res = await fetch("http://localhost:1023/watches/", {
-      next: { revalidate: 3600 },
-    });
+    const res = await fetch("http://localhost:1023/watches/");
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -17,10 +15,8 @@ async function getWatches(): Promise<IWatch[] | undefined> {
   }
 }
 
-export async function Watches() {
+export async function FetchWatches() {
   const watches = await getWatches();
-
-  console.log(watches);
 
   return (
     <>
