@@ -15,6 +15,7 @@ export const ImageWrapper = styled.div`
 
   img {
     object-fit: cover;
+    border-radius: 2px;
   }
 
   &:hover {

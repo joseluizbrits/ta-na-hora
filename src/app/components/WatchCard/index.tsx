@@ -26,13 +26,17 @@ function WatchCard({ watch }: { watch: IWatch }) {
           </Shadow>
         </ImageWrapper>
       </Link>
-
       <Content>
         <h2>
           {watch.brand} {watch.model}
         </h2>
         <p>{watch.desc}</p>
-        <span>R$ {watch.price}</span>
+        <span>
+          {watch.price.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </span>
       </Content>
       <Button>Adicionar à sacola</Button>
     </Card>
