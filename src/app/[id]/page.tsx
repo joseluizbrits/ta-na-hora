@@ -1,7 +1,9 @@
+import ButtonBack from "../components/ButtonBack";
+
 export default function Page({ params }: { params: { id: string } }) {
   return (
     <>
-      <span>{params.id}</span>
+      <ButtonBack />
     </>
   );
 }
