@@ -3,7 +3,9 @@ import { IWatch } from "@/app/interfaces/watch";
 
 async function getWatches(): Promise<IWatch[] | undefined> {
   try {
-    const res = await fetch("http://localhost:1023/watches/3");
+    const res = await fetch("http://localhost:1023/watches/", {
+      next: { revalidate: 3600 },
+    });
 
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -23,10 +25,7 @@ export async function Watches() {
   return (
     <>
       {watches?.map((watch) => (
-        <div key={watch._id}>
-          <WatchCard watch={watch} />
-          <span>{watch.model}</span>
-        </div>
+        <WatchCard key={watch._id} watch={watch} />
       ))}
     </>
   );

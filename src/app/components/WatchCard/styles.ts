@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 480px;
-  height: max-content;
+  width: 100%;
+  height: 100%;
   padding: 16px;
   background-color: var(--white);
 `;
@@ -20,6 +20,7 @@ export const ImageWrapper = styled.div`
   &:hover {
     div {
       height: 100%;
+      pointer-events: all;
     }
 
     span,
@@ -43,6 +44,7 @@ export const Shadow = styled.div`
   bottom: 0;
   z-index: 1;
 
+  pointer-events: none;
   transform-origin: bottom;
 
   transition: 0.3s ease;
@@ -69,7 +71,7 @@ export const Content = styled.div`
 
   h2 {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--primary);
   }
 
