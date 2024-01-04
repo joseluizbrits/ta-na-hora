@@ -4,7 +4,7 @@ import { Card, Content, ImageWrapper, Shadow } from "./styles";
 import { IWatch } from "@/app/interfaces/watch";
 
 import Image from "next/image";
-import Button from "../Button";
+import ButtonBag from "../ButtonBag";
 import ArrowCircle from "@/app/icons/ArrowCircle";
 import Link from "next/link";
 
@@ -38,7 +38,7 @@ function WatchCard({ watch }: { watch: IWatch }) {
           })}
         </span>
       </Content>
-      <Button>Adicionar à sacola</Button>
+      <ButtonBag>Adicionar à sacola</ButtonBag>
     </Card>
   );
 }

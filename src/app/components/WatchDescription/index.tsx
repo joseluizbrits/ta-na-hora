@@ -5,7 +5,7 @@ import { IWatch } from "@/app/interfaces/watch";
 import Image from "next/image";
 
 import Installments from "../Installments";
-import Button from "../Button";
+import ButtonBag from "../ButtonBag";
 
 function WatchDescription({ watch }: { watch: IWatch }) {
   return (
@@ -33,7 +33,7 @@ function WatchDescription({ watch }: { watch: IWatch }) {
               currency: "BRL",
             })}
           </strong>
-          <Button>Adicionar à sacola</Button>
+          <ButtonBag>Adicionar à sacola</ButtonBag>
         </Content>
       </Description>
     </Container>
