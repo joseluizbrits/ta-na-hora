@@ -38,7 +38,7 @@ function WatchCard({ watch }: { watch: IWatch }) {
           })}
         </span>
       </Content>
-      <ButtonBag>Adicionar à sacola</ButtonBag>
+      <ButtonBag id={watch._id}>Adicionar à sacola</ButtonBag>
     </Card>
   );
 }
