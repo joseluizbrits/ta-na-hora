@@ -1,5 +1,6 @@
 import { IWatch } from "@/app/interfaces/watch";
 import WatchDescription from "../WatchDescription";
+import WatchDetails from "../WatchDetails";
 
 async function getWatch(id: string): Promise<IWatch | undefined> {
   try {
@@ -23,7 +24,10 @@ export async function FetchWatch({ id }: { id: string }) {
   return (
     <>
       {watch ? (
-        <WatchDescription watch={watch} />
+        <>
+          <WatchDescription watch={watch} />
+          <WatchDetails watch={watch} />
+        </>
       ) : (
         <span>Relógio não encontrado</span>
       )}

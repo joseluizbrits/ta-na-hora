@@ -14,6 +14,7 @@ export const Wrapp = styled.div`
   svg {
     margin-left: -24px;
     transition: 0.3s ease;
+    cursor: pointer;
   }
 `;
 

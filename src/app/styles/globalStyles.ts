@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
     --secundaryShadow: rgba(255, 179, 13, 0.7);
     --warning: #FF2D2D;
     --gray: #A6A6A6;
+    --grayShadow: rgba(166, 166, 166, 0.25);
     --bg: #242B3A 
   }
 
