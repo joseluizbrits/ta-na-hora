@@ -1,14 +1,14 @@
 "use client";
 
+import { useFilter } from "@/app/hooks/useFilter";
 import { Container, Item } from "./styles";
 import { poppins } from "@/app/lib/fonts";
-import { useState } from "react";
 
 function Filter() {
-  const [activeItem, setActiveItem] = useState("by-all");
+  const { filter, setFilter } = useFilter();
 
   const handleActiveItem = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setActiveItem(e.currentTarget.id);
+    setFilter(e.currentTarget.id);
   };
 
   return (
@@ -16,36 +16,36 @@ function Filter() {
       <ul>
         <li>
           <Item
-            id="by-all"
+            id="all"
             onClick={handleActiveItem}
-            className={activeItem === "by-all" ? "active" : ""}
+            className={filter === "all" ? "active" : ""}
           >
             <span className={poppins.className}>Todos</span>
           </Item>
         </li>
         <li>
           <Item
-            id="by-gold"
+            id="gold"
             onClick={handleActiveItem}
-            className={activeItem === "by-gold" ? "active" : ""}
+            className={filter === "gold" ? "active" : ""}
           >
             <span className={poppins.className}>Ouro</span>
           </Item>
         </li>
         <li>
           <Item
-            id="by-steel"
+            id="steel"
             onClick={handleActiveItem}
-            className={activeItem === "by-steel" ? "active" : ""}
+            className={filter === "steel" ? "active" : ""}
           >
             <span className={poppins.className}>Aço</span>
           </Item>
         </li>
         <li>
           <Item
-            id="by-ceramic"
+            id="ceramic"
             onClick={handleActiveItem}
-            className={activeItem === "by-ceramic" ? "active" : ""}
+            className={filter === "ceramic" ? "active" : ""}
           >
             <span className={poppins.className}>Cerâmica</span>
           </Item>

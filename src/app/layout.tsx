@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { poppins } from "./lib/fonts";
 
 import StylesProvider from "./styles/StylesProvider";
-import BagProvider from "./context/BagContext";
+import BagProvider from "./contexts/BagContext";
+import FilterProvider from "./contexts/FilterContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -22,7 +23,9 @@ export default function RootLayout({
         <StylesProvider>
           <BagProvider>
             <Header />
-            <main>{children}</main>
+            <FilterProvider>
+              <main>{children}</main>
+            </FilterProvider>
           </BagProvider>
           <Footer />
         </StylesProvider>

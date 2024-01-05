@@ -3,12 +3,20 @@
 import { Card, Content, ImageWrapper, Shadow } from "./styles";
 import { IWatch } from "@/app/interfaces/watch";
 
+import { useFilter } from "@/app/hooks/useFilter";
+import { getWatchBoxMaterial } from "@/app/utils/getWatchBoxMaterial";
+
+import Link from "next/link";
 import Image from "next/image";
 import ButtonBag from "../ButtonBag";
 import ArrowCircle from "@/app/icons/ArrowCircle";
-import Link from "next/link";
 
 function WatchCard({ watch }: { watch: IWatch }) {
+  const { filter } = useFilter();
+
+  const box = getWatchBoxMaterial(watch.box);
+
+  if (box !== filter && filter !== "all") return null;
   return (
     <Card>
       <Link href={`/watch/${watch._id}`}>
