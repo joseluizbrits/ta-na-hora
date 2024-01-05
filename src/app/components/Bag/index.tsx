@@ -1,19 +1,20 @@
 "use client";
 
 import { Wrapp } from "./styles";
-import { BagContext } from "@/app/context/BagContext";
-import { useContext, useEffect, useState } from "react";
+import { useBag } from "@/app/hooks/useBag";
 import BagIcon from "../../icons/BagIcon";
 
 function Bag() {
-  // const { getBag } = useContext(BagContext);
+  const { getBag } = useBag();
+
+  const amount = getBag().length;
 
   return (
     <Wrapp>
       <BagIcon />
-      {0 > 0 && (
+      {amount > 0 && (
         <div>
-          <span>{}</span>
+          <span>{amount}</span>
         </div>
       )}
     </Wrapp>

@@ -1,12 +1,11 @@
 "use client";
 
 import { ButtonWrapper } from "./styles";
-import { useContext } from "react";
-import { BagContext } from "@/app/context/BagContext";
 import { poppins } from "@/app/lib/fonts";
+import { useBag } from "@/app/hooks/useBag";
 
 function ButtonBag({ children, id }: React.PropsWithChildren & { id: string }) {
-  const { setBag } = useContext(BagContext);
+  const { setBag } = useBag();
 
   const handleBag = () => {
     const watch = { id, amount: 1 };

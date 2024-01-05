@@ -1,7 +1,7 @@
 "use client";
 
-import { poppins } from "@/app/lib/fonts";
 import { Container, Item } from "./styles";
+import { poppins } from "@/app/lib/fonts";
 import { useState } from "react";
 
 function Filter() {
