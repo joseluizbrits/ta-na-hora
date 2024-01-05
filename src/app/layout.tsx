@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { poppins } from "./lib/fonts";
-import StylesProvider from "./styles/StylesProvider";
 
+import StylesProvider from "./styles/StylesProvider";
+import BagProvider from "./context/BagContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -19,8 +20,10 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={poppins.className}>
         <StylesProvider>
-          <Header />
-          <main>{children}</main>
+          <BagProvider>
+            <Header />
+            <main>{children}</main>
+          </BagProvider>
           <Footer />
         </StylesProvider>
       </body>

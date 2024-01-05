@@ -33,7 +33,7 @@ function WatchDescription({ watch }: { watch: IWatch }) {
               currency: "BRL",
             })}
           </strong>
-          <ButtonBag>Adicionar à sacola</ButtonBag>
+          <ButtonBag id={watch._id}>Adicionar à sacola</ButtonBag>
         </Content>
       </Description>
     </Container>

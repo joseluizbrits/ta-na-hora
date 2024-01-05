@@ -1,4 +1,5 @@
 "use client";
+
 import { Container } from "./styles";
 import Logo from "../Logo";
 import Search from "../Search";

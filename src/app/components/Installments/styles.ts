@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Wrapp = styled.div`
   /* Custom Select wrapper */
   height: 40px;
-  border-radius: 2px;
 
   display: flex;
   align-items: center;
@@ -28,8 +27,9 @@ export const Select = styled.select`
   width: 16em;
   height: 100%;
   padding: 0 1em;
-  border: 1px solid var(--gray);
   color: var(--bg);
+  border: 1px solid var(--gray);
+  border-radius: 2px;
   background-image: none;
   cursor: pointer;
 `;

@@ -1,6 +1,6 @@
 import { IBagWatch } from "../interfaces/bag";
 
-export const getBag = (): IBagWatch[] | [] => {
+export const getStorageBag = (): IBagWatch[] | [] => {
   const bag = localStorage.getItem("bag");
 
   if (!bag) return [];
@@ -8,18 +8,20 @@ export const getBag = (): IBagWatch[] | [] => {
   return JSON.parse(bag);
 };
 
-export const setBag = (watch: IBagWatch) => {
-  const bag = getBag();
-
+export const setStorageBag = (bag: IBagWatch[], watch: IBagWatch) => {
   const repetedWatch = bag.filter((bagWatch) => bagWatch.id === watch.id);
 
   if (repetedWatch.length > 0) {
     const newBag = changeAmountBagWatch(bag, watch.id);
 
-    return localStorage.setItem("bag", JSON.stringify(newBag));
+    localStorage.setItem("bag", JSON.stringify(newBag));
+
+    return getStorageBag();
   }
 
-  return localStorage.setItem("bag", JSON.stringify([watch, ...bag]));
+  localStorage.setItem("bag", JSON.stringify([watch, ...bag]));
+
+  return getStorageBag();
 };
 
 export const changeAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
