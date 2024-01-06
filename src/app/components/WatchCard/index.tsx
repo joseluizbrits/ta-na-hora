@@ -11,20 +11,16 @@ import Image from "next/image";
 import ButtonBag from "../ButtonBag";
 import ArrowCircle from "@/app/icons/ArrowCircle";
 
-function WatchCard({ watch, brand }: { watch: IWatch; brand?: string }) {
+function WatchCard({ watch }: { watch: IWatch }) {
   const material = getWatchBoxMaterial(watch.box);
   const { filter } = useFilter();
 
   const matchAll = filter === "all";
   const matchMaterial = filter === material;
-  const matchBrand = brand === watch.brand;
 
   const isFilteredByMaterial = matchAll || matchMaterial;
-  const isFilteredByBrand = isFilteredByMaterial && matchBrand;
 
-  if (brand && !isFilteredByBrand) return null;
-
-  if (isFilteredByMaterial || isFilteredByBrand)
+  if (isFilteredByMaterial)
     return (
       <Card>
         <Link href={`/watch/${watch._id}`}>

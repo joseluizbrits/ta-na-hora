@@ -1,5 +1,6 @@
 import WatchCard from "../WatchCard";
 import { IWatch } from "@/app/interfaces/watch";
+import Slider from "../Slider";
 
 async function getWatches(): Promise<IWatch[] | undefined> {
   try {
@@ -20,9 +21,9 @@ export async function FetchWatches({ brand }: { brand?: string }) {
 
   return (
     <>
-      {watches?.map((watch) => (
-        <WatchCard key={watch._id} watch={watch} brand={brand} />
-      ))}
+      {!brand
+        ? watches?.map((watch) => <WatchCard key={watch._id} watch={watch} />)
+        : watches && <Slider watches={watches} brand={brand} />}
     </>
   );
 }
