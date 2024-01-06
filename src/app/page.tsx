@@ -1,6 +1,6 @@
-import { FetchWatches } from "./components/FetchWatches";
-import Filter from "./components/Filter";
-import WatchesContainer from "./components/WachesContainer";
+import Filter from "@/components/Filter";
+import WatchesContainer from "@/components/WachesContainer";
+import { FetchWatches } from "@/components/FetchWatches";
 
 export default function Home() {
   return (
