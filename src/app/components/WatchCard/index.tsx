@@ -23,7 +23,7 @@ function WatchCard({ watch }: { watch: IWatch }) {
   if (isFilteredByMaterial)
     return (
       <Card>
-        <Link href={`/watch/${watch._id}`}>
+        <Link href={`/relogios/${watch._id}`}>
           <ImageWrapper>
             <Image
               src={watch.image}
