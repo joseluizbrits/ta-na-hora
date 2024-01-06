@@ -15,13 +15,13 @@ async function getWatches(): Promise<IWatch[] | undefined> {
   }
 }
 
-export async function FetchWatches() {
+export async function FetchWatches({ brand }: { brand?: string }) {
   const watches = await getWatches();
 
   return (
     <>
       {watches?.map((watch) => (
-        <WatchCard key={watch._id} watch={watch} />
+        <WatchCard key={watch._id} watch={watch} brand={brand} />
       ))}
     </>
   );
