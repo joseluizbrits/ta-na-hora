@@ -2,6 +2,8 @@
 
 import { Wrapp } from "./styles";
 import { useBag } from "@/hooks/useBag";
+
+import Link from "next/link";
 import BagIcon from "../../icons/BagIcon";
 
 function Bag() {
@@ -11,12 +13,14 @@ function Bag() {
 
   return (
     <Wrapp>
-      <BagIcon />
-      {amount > 0 && (
-        <div>
-          <span>{amount}</span>
-        </div>
-      )}
+      <Link href={"/sacola"}>
+        <BagIcon />
+        {amount > 0 && (
+          <div>
+            <span>{amount}</span>
+          </div>
+        )}
+      </Link>
     </Wrapp>
   );
 }
