@@ -1,28 +1,25 @@
+import FilterCheck from "../FilterCheck";
 import WatchCard from "../WatchCard";
 import Slider from "../Slider";
-import FilterChecker from "../FilterCheck";
+
 import { getWatches } from "@/utils/fetchApi";
-import { IWatch } from "@/interfaces/watch";
-import { pagination } from "@/utils/pagination";
 
 export async function FetchWatches({ brand }: { brand?: string }) {
   const watches = await getWatches();
 
-  if (watches) {
-    const pages = pagination<IWatch>(watches, 9);
-
+  if (watches)
     return (
       <>
         {!brand ? (
           watches.map((watch) => (
-            <FilterChecker key={watch._id} watchBox={watch.box}>
+            <FilterCheck key={watch._id} watchBox={watch.box}>
               <WatchCard watch={watch} />
-            </FilterChecker>
+            </FilterCheck>
           ))
         ) : (
           <Slider watches={watches} brand={brand} />
         )}
       </>
     );
-  } else return <div>Relógios não encontrados...</div>;
+  else return <div>Nenhum relógio foi encontrado...</div>;
 }

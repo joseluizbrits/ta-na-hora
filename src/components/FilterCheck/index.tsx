@@ -9,7 +9,7 @@ interface IFilterProvider {
   watchBox: string;
 }
 
-function FilterChecker({ children, watchBox }: IFilterProvider) {
+function FilterCheck({ children, watchBox }: IFilterProvider) {
   const material = getWatchBoxMaterial(watchBox);
   const { filter } = useFilter();
 
@@ -22,4 +22,4 @@ function FilterChecker({ children, watchBox }: IFilterProvider) {
   else return null;
 }
 
-export default FilterChecker;
+export default FilterCheck;
