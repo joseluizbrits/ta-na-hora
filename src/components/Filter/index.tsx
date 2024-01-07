@@ -5,10 +5,14 @@ import { poppins } from "@/lib/fonts";
 import { useFilter } from "@/hooks/useFilter";
 
 function Filter() {
-  const { filter, setFilter } = useFilter();
+  const { material, setMaterial } = useFilter();
 
   const handleActiveItem = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setFilter(e.currentTarget.id);
+    const itemId = e.currentTarget.id;
+
+    if (itemId === "all") return setMaterial("");
+
+    setMaterial(e.currentTarget.id);
   };
 
   return (
@@ -18,7 +22,7 @@ function Filter() {
           <Item
             id="all"
             onClick={handleActiveItem}
-            className={filter === "all" ? "active" : ""}
+            className={!material ? "active" : ""}
           >
             <span className={poppins.className}>Todos</span>
           </Item>
@@ -27,7 +31,7 @@ function Filter() {
           <Item
             id="gold"
             onClick={handleActiveItem}
-            className={filter === "gold" ? "active" : ""}
+            className={material === "gold" ? "active" : ""}
           >
             <span className={poppins.className}>Ouro</span>
           </Item>
@@ -36,7 +40,7 @@ function Filter() {
           <Item
             id="steel"
             onClick={handleActiveItem}
-            className={filter === "steel" ? "active" : ""}
+            className={material === "steel" ? "active" : ""}
           >
             <span className={poppins.className}>Aço</span>
           </Item>
@@ -45,7 +49,7 @@ function Filter() {
           <Item
             id="ceramic"
             onClick={handleActiveItem}
-            className={filter === "ceramic" ? "active" : ""}
+            className={material === "ceramic" ? "active" : ""}
           >
             <span className={poppins.className}>Cerâmica</span>
           </Item>

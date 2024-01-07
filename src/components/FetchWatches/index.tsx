@@ -1,8 +1,7 @@
-import FilterCheck from "../FilterCheck";
-import WatchCard from "../WatchCard";
-import Slider from "../Slider";
-
 import { getWatches } from "@/utils/fetchApi";
+
+import Watches from "../Watches";
+import Slider from "../Slider";
 
 export async function FetchWatches({ brand }: { brand?: string }) {
   const watches = await getWatches();
@@ -11,11 +10,7 @@ export async function FetchWatches({ brand }: { brand?: string }) {
     return (
       <>
         {!brand ? (
-          watches.map((watch) => (
-            <FilterCheck key={watch._id} watchBox={watch.box}>
-              <WatchCard watch={watch} />
-            </FilterCheck>
-          ))
+          <Watches watches={watches} />
         ) : (
           <Slider watches={watches} brand={brand} />
         )}

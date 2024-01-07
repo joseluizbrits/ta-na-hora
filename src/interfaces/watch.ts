@@ -9,3 +9,11 @@ export interface IWatch {
   bracelet: string;
   desc: string;
 }
+
+export interface IWatchContext {
+  setWatches: (watches: IWatch[]) => void;
+  getWatches: () => IWatch[];
+  getWatch: (id: string) => IWatch;
+  getWatchesByBrand: (brand: string) => IWatch[];
+  getWatchesByMaterial: (material: string) => IWatch[];
+}
