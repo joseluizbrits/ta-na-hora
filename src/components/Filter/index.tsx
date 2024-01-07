@@ -5,7 +5,7 @@ import { poppins } from "@/lib/fonts";
 import { useFilter } from "@/hooks/useFilter";
 
 function Filter() {
-  const { material, setMaterial } = useFilter();
+  const { material, setMaterial, setPageActive } = useFilter();
 
   const handleActiveItem = (e: React.MouseEvent<HTMLButtonElement>) => {
     const itemId = e.currentTarget.id;
@@ -13,6 +13,7 @@ function Filter() {
     if (itemId === "all") return setMaterial("");
 
     setMaterial(e.currentTarget.id);
+    setPageActive("page-1");
   };
 
   return (
