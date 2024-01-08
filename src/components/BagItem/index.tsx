@@ -14,7 +14,7 @@ import ButtonDelete from "../ButtonDelete";
 function BagItem() {
   const { getBag } = useBag();
 
-  if (!getBag()) return null;
+  if (getBag().length === 0) return <div>Sua sacola está vazia</div>;
 
   return (
     <Container>

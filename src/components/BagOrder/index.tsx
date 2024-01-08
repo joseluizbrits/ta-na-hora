@@ -1,15 +1,24 @@
 "use client";
 
-import ButtonOrder from "../ButtonOrder";
 import { Card } from "./styles";
+import { useBag } from "@/hooks/useBag";
+import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
+import ButtonOrder from "../ButtonOrder";
 
 function BagOrder() {
+  const { getBag } = useBag();
+
+  if (getBag().length === 0) return null;
+
+  const prices = getBag().map(({ watch, amount }) => watch.price * amount);
+  const subtotal = prices.reduce((acc, value) => acc + value, 0);
+
   return (
     <Card>
       <ul>
         <li>
           <span>Subtotal</span>
-          <span>R$ 92.574,00</span>
+          <span>{toCurrencyBRL(subtotal)}</span>
         </li>
         <li>
           <span>Descontos</span>
@@ -22,7 +31,7 @@ function BagOrder() {
       </ul>
       <div>
         <span>Total</span>
-        <span>R$ 92.574,00</span>
+        <span>{toCurrencyBRL(subtotal)}</span>
       </div>
       <ButtonOrder>Finalizar pedido</ButtonOrder>
     </Card>
