@@ -1,8 +1,9 @@
+import { IWatch } from "./watch";
 export interface IBagWatch {
-  id: string;
+  watch: IWatch;
   amount: number;
 }
-export interface IBag {
-  getBag: () => IBagWatch[] | [];
-  setBag: (watch: IBagWatch) => void;
+export interface IBagContext {
+  getBag: () => IBagWatch[];
+  setBag: (bagItem: IBagWatch) => void;
 }

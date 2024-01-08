@@ -1,10 +1,10 @@
 "use client";
 
 import { createContext, useState, useEffect, ReactNode } from "react";
-import { IBag, IBagWatch } from "../interfaces/bag";
+import { IBagContext, IBagWatch } from "../interfaces/bag";
 import { getStorageBag, setStorageBag } from "../utils/localBagStorage";
 
-export const BagContext = createContext<IBag>({} as IBag);
+export const BagContext = createContext({} as IBagContext);
 
 export default function BagProvider({ children }: { children: ReactNode }) {
   const [storage, setStorage] = useState<IBagWatch[] | []>([]);
@@ -17,8 +17,8 @@ export default function BagProvider({ children }: { children: ReactNode }) {
 
   const getBag = () => storage;
 
-  const setBag = (watch: IBagWatch) => {
-    setStorage(setStorageBag(watch));
+  const setBag = (bagItem: IBagWatch) => {
+    setStorage(setStorageBag(bagItem));
   };
 
   return (

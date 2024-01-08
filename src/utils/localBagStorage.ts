@@ -8,29 +8,31 @@ export const getStorageBag = (): [] | IBagWatch[] => {
   return JSON.parse(bag);
 };
 
-export const setStorageBag = (watch: IBagWatch) => {
+export const setStorageBag = (bagItem: IBagWatch) => {
   const bag = getStorageBag();
 
-  const repetedWatch = bag.filter((bagWatch) => bagWatch.id === watch.id);
+  const repetedWatch = bag.filter(
+    ({ watch }) => watch._id === bagItem.watch._id
+  );
 
   if (repetedWatch.length > 0) {
-    const newBag = changeAmountBagWatch(bag, watch.id);
+    const newBag = changeAmountBagWatch(bag, bagItem.watch._id);
 
     localStorage.setItem("bag", JSON.stringify(newBag));
 
     return getStorageBag();
   }
 
-  localStorage.setItem("bag", JSON.stringify([watch, ...bag]));
+  localStorage.setItem("bag", JSON.stringify([bagItem, ...bag]));
 
   return getStorageBag();
 };
 
 export const changeAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
-  const newBag = bag.map((bagWatch) => {
-    if (bagWatch.id === watchId) ({ watchId, amount: bagWatch.amount++ });
+  const newBag = bag.map((bagItem) => {
+    if (bagItem.watch._id === watchId) ({ watchId, amount: bagItem.amount++ });
 
-    return bagWatch;
+    return bagItem;
   });
 
   return newBag;

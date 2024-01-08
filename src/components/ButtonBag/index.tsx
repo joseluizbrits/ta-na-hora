@@ -1,16 +1,19 @@
 "use client";
 
 import { ButtonWrapper } from "./styles";
+import { IWatch } from "@/interfaces/watch";
 import { poppins } from "@/lib/fonts";
 import { useBag } from "@/hooks/useBag";
 
-function ButtonBag({ children, id }: React.PropsWithChildren & { id: string }) {
+type IButtonBag = React.PropsWithChildren & { watch: IWatch };
+
+function ButtonBag({ children, watch }: IButtonBag) {
   const { setBag } = useBag();
 
   const handleBag = () => {
-    const watch = { id, amount: 1 };
+    const bagItem = { watch, amount: 1 };
 
-    setBag(watch);
+    setBag(bagItem);
   };
 
   return (
