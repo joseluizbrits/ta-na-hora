@@ -15,11 +15,6 @@ export const Container = styled.div`
   }
 
   #decrease {
-    /* padding-right: 8px; */
     margin-top: -2px;
-  }
-
-  #increase {
-    /* padding-left: 8px; */
   }
 `;

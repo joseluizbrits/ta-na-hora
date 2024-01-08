@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Card, Text } from "./styles";
-import Quantity from "../Quantity";
+import BagQuantity from "../BagQuantity";
 import DeleteIcon from "@/icons/DeleteIcon";
 
 import Link from "next/link";
@@ -50,7 +50,7 @@ function BagItem() {
                 </td>
                 <td>{toCurrencyBRL(watch.price)}</td>
                 <td>
-                  <Quantity amount={amount} />
+                  <BagQuantity watch={watch} amount={amount} />
                 </td>
                 <td>{toCurrencyBRL(watch.price * amount)}</td>
               </tr>

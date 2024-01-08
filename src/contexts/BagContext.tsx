@@ -21,8 +21,8 @@ export default function BagProvider({ children }: { children: ReactNode }) {
 
   const getBag = () => storage;
 
-  const setBag = (bagItem: IBagWatch) => {
-    setStorage(setStorageBag(bagItem));
+  const setBag = (bagItem: IBagWatch, decrease?: boolean) => {
+    setStorage(setStorageBag(bagItem, decrease));
   };
 
   const removeItem = (watchId: string) => {

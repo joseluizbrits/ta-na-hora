@@ -5,6 +5,6 @@ export interface IBagWatch {
 }
 export interface IBagContext {
   getBag: () => IBagWatch[];
-  setBag: (bagItem: IBagWatch) => void;
+  setBag: (bagItem: IBagWatch, decrease?: boolean) => void;
   removeItem: (watchId: string) => void;
 }

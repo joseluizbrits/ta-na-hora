@@ -8,7 +8,7 @@ export const getStorageBag = (): [] | IBagWatch[] => {
   return JSON.parse(bag);
 };
 
-export const setStorageBag = (bagItem: IBagWatch) => {
+export const setStorageBag = (bagItem: IBagWatch, decrease = false) => {
   const bag = getStorageBag();
 
   const repetedWatch = bag.filter(
@@ -16,7 +16,10 @@ export const setStorageBag = (bagItem: IBagWatch) => {
   );
 
   if (repetedWatch.length > 0) {
-    const newBag = changeAmountBagWatch(bag, bagItem.watch._id);
+    let newBag;
+
+    if (decrease) newBag = decreaseAmountBagWatch(bag, bagItem.watch._id);
+    if (!decrease) newBag = increaseAmountBagWatch(bag, bagItem.watch._id);
 
     localStorage.setItem("bag", JSON.stringify(newBag));
 
@@ -28,9 +31,19 @@ export const setStorageBag = (bagItem: IBagWatch) => {
   return getStorageBag();
 };
 
-export const changeAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
+export const increaseAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
   const newBag = bag.map((bagItem) => {
     if (bagItem.watch._id === watchId) ({ watchId, amount: bagItem.amount++ });
+
+    return bagItem;
+  });
+
+  return newBag;
+};
+
+export const decreaseAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
+  const newBag = bag.map((bagItem) => {
+    if (bagItem.watch._id === watchId) ({ watchId, amount: bagItem.amount-- });
 
     return bagItem;
   });
