@@ -8,6 +8,10 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
   nav {
     display: flex;
     align-items: center;

@@ -12,7 +12,7 @@ export const Card = styled.div`
   gap: 40px;
 
   position: sticky;
-  top: 40px;
+  top: 120px;
 
   ul {
     border-bottom: 1px solid var(--grayShadow);
