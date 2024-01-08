@@ -6,7 +6,7 @@ import { useBag } from "@/hooks/useBag";
 import Link from "next/link";
 import BagIcon from "../../icons/BagIcon";
 
-function Bag() {
+function BagLink() {
   const { getBag } = useBag();
 
   const amount = getBag().length;
@@ -25,4 +25,4 @@ function Bag() {
   );
 }
 
-export default Bag;
+export default BagLink;

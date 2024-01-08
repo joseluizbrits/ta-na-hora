@@ -3,7 +3,7 @@
 import { Container } from "./styles";
 import Logo from "../Logo";
 import Search from "../Search";
-import Bag from "../Bag";
+import BagLink from "../BagLink";
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
       <Logo />
       <nav>
         <Search />
-        <Bag />
+        <BagLink />
       </nav>
     </Container>
   );

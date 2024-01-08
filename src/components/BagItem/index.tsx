@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, ImageWrapper, Delete } from "./styles";
+import { Card, Delete, Text } from "./styles";
 import Quantity from "../Quantity";
 import DeleteIcon from "@/icons/DeleteIcon";
 
@@ -29,18 +29,23 @@ function BagItem() {
               </tr>
               <tr>
                 <td>
-                  <ImageWrapper>
-                    <Image
-                      src={watch.image}
-                      width={100}
-                      height={80}
-                      alt={`Relógio ${watch.brand} ${watch.model}`}
-                    />
-                    <Link href={`/relogios/${watch._id}`}>
-                      <span>{watch.model}</span>
+                  <Link href={`/relogios/${watch._id}`}>
+                    <div>
+                      <Image
+                        src={watch.image}
+                        width={100}
+                        height={80}
+                        priority
+                        alt={`Relógio ${watch.brand} ${watch.model}`}
+                      />
+                    </div>
+                    <Text>
+                      <span>
+                        {watch.brand} {watch.model}
+                      </span>
                       <span>{watch.desc}</span>
-                    </Link>
-                  </ImageWrapper>
+                    </Text>
+                  </Link>
                 </td>
                 <td>{toCurrencyBRL(watch.price)}</td>
                 <td>

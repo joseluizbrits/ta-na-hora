@@ -2,7 +2,7 @@ import BagItem from "@/components/BagItem";
 import ButtonBack from "@/components/ButtonBack";
 import React from "react";
 
-function PageBag() {
+function Bag() {
   return (
     <>
       <ButtonBack />
@@ -11,4 +11,4 @@ function PageBag() {
   );
 }
 
-export default PageBag;
+export default Bag;
