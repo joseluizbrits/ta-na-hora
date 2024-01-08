@@ -2,6 +2,7 @@
 
 import { Benefits, Card } from "./styles";
 import { IWatch } from "@/interfaces/watch";
+import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
 
 import Truck from "@/icons/Truck";
 import Gift from "@/icons/Gift";
@@ -34,12 +35,7 @@ function WatchDetails({ watch }: { watch: IWatch }) {
         <hr />
         <li>
           <h3>Preço</h3>
-          <span>
-            {watch.price.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </span>
+          <span>{toCurrencyBRL(watch.price)}</span>
         </li>
       </ul>
       <Benefits>

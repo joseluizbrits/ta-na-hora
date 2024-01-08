@@ -1,5 +1,5 @@
-function Quantity() {
-  return <>- 2 +</>;
+function Quantity({ amount }: { amount: number }) {
+  return <>- {amount} +</>;
 }
 
 export default Quantity;

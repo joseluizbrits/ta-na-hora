@@ -2,6 +2,7 @@
 
 import { Container, Content, Description, ImageWrapper } from "./styles";
 import { IWatch } from "@/interfaces/watch";
+import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
 
 import Image from "next/image";
 import Installments from "../Installments";
@@ -27,12 +28,7 @@ function WatchDescription({ watch }: { watch: IWatch }) {
           <span>{watch.desc}</span>
           <p>{watch.description}</p>
           <Installments price={watch.price} />
-          <strong>
-            {watch.price.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-          </strong>
+          <strong>{toCurrencyBRL(watch.price)}</strong>
           <ButtonBag watch={watch}>Adicionar à sacola</ButtonBag>
         </Content>
       </Description>

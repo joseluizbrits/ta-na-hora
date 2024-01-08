@@ -1,14 +1,12 @@
 "use client";
 
 import { Select, Wrapp } from "./styles";
+import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
 import ArrowDrop from "@/icons/ArrowDrop";
 
 function Installments({ price }: { price: number }) {
   const parcels = (price: number, n: number) =>
-    Number((price / n).toFixed()).toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
-    });
+    toCurrencyBRL(Number((price / n).toFixed()));
 
   return (
     <Wrapp>

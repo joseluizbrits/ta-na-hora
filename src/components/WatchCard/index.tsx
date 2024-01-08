@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import ButtonBag from "../ButtonBag";
 import ArrowCircle from "@/icons/ArrowCircle";
+import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
 
 function WatchCard({ watch }: { watch: IWatch }) {
   return (
@@ -32,12 +33,7 @@ function WatchCard({ watch }: { watch: IWatch }) {
           {watch.brand} {watch.model}
         </h2>
         <p>{watch.desc}</p>
-        <span>
-          {watch.price.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
-        </span>
+        <span>{toCurrencyBRL(watch.price)}</span>
       </Content>
       <ButtonBag watch={watch}>Adicionar à sacola</ButtonBag>
     </Card>
