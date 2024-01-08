@@ -2,7 +2,11 @@
 
 import { createContext, useState, useEffect, ReactNode } from "react";
 import { IBagContext, IBagWatch } from "../interfaces/bag";
-import { getStorageBag, setStorageBag } from "../utils/localBagStorage";
+import {
+  getStorageBag,
+  removeItemStorageBag,
+  setStorageBag,
+} from "../utils/localBagStorage";
 
 export const BagContext = createContext({} as IBagContext);
 
@@ -21,8 +25,12 @@ export default function BagProvider({ children }: { children: ReactNode }) {
     setStorage(setStorageBag(bagItem));
   };
 
+  const removeItem = (watchId: string) => {
+    setStorage(removeItemStorageBag(watchId));
+  };
+
   return (
-    <BagContext.Provider value={{ getBag, setBag }}>
+    <BagContext.Provider value={{ getBag, setBag, removeItem }}>
       {children}
     </BagContext.Provider>
   );

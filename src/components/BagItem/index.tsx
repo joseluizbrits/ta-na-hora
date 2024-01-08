@@ -1,6 +1,6 @@
 "use client";
 
-import { Container, Card, Text, Delete } from "./styles";
+import { Container, Card, Text } from "./styles";
 import Quantity from "../Quantity";
 import DeleteIcon from "@/icons/DeleteIcon";
 
@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { useBag } from "@/hooks/useBag";
 import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
+import ButtonDelete from "../ButtonDelete";
 
 function BagItem() {
   const { getBag } = useBag();
@@ -55,9 +56,9 @@ function BagItem() {
               </tr>
             </tbody>
           </table>
-          <Delete>
+          <ButtonDelete watchId={watch._id}>
             <DeleteIcon />
-          </Delete>
+          </ButtonDelete>
         </Card>
       ))}
     </Container>

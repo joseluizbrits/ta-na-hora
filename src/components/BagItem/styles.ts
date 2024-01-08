@@ -10,6 +10,7 @@ export const Card = styled.div`
   padding: 40px;
   border-radius: 2px;
   max-width: max-content;
+  height: max-content;
 
   position: relative;
 
@@ -59,10 +60,4 @@ export const Text = styled.div`
     max-width: 20ch;
     color: var(--bg);
   }
-`;
-
-export const Delete = styled.button`
-  position: absolute;
-  top: -20px;
-  right: -20px;
 `;

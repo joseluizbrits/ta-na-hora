@@ -37,3 +37,13 @@ export const changeAmountBagWatch = (bag: IBagWatch[], watchId: string) => {
 
   return newBag;
 };
+
+export const removeItemStorageBag = (watchId: string) => {
+  const bag = getStorageBag();
+
+  const newBag = bag.filter(({ watch }) => watch._id !== watchId);
+
+  localStorage.setItem("bag", JSON.stringify(newBag));
+
+  return getStorageBag();
+};
