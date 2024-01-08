@@ -6,11 +6,10 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
+  height: max-content;
   background-color: var(--white);
   padding: 40px;
   border-radius: 2px;
-  max-width: max-content;
-  height: max-content;
 
   position: relative;
 
@@ -31,6 +30,7 @@ export const Card = styled.div`
 
   td {
     color: var(--bg);
+    min-width: 8em;
   }
 
   td a {
