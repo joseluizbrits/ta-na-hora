@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, Delete, Text } from "./styles";
+import { Container, Card, Text, Delete } from "./styles";
 import Quantity from "../Quantity";
 import DeleteIcon from "@/icons/DeleteIcon";
 
@@ -16,7 +16,7 @@ function BagItem() {
   if (!getBag()) return null;
 
   return (
-    <>
+    <Container>
       {getBag().map(({ watch, amount }, index) => (
         <Card key={`bag_item-${index + 1}`}>
           <table>
@@ -60,7 +60,7 @@ function BagItem() {
           </Delete>
         </Card>
       ))}
-    </>
+    </Container>
   );
 }
 

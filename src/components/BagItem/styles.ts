@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: grid;
+  gap: 40px;
+`;
+
 export const Card = styled.div`
   background-color: var(--white);
   padding: 40px;
-  margin-top: 64px;
   border-radius: 2px;
   max-width: max-content;
 

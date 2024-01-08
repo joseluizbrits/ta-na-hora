@@ -1,12 +1,16 @@
-import BagItem from "@/components/BagItem";
 import ButtonBack from "@/components/ButtonBack";
-import React from "react";
+import BagContainer from "@/components/BagContainer";
+import BagItem from "@/components/BagItem";
+import BagOrder from "@/components/BagOrder";
 
 function Bag() {
   return (
     <>
       <ButtonBack />
-      <BagItem />
+      <BagContainer>
+        <BagItem />
+        <BagOrder />
+      </BagContainer>
     </>
   );
 }
