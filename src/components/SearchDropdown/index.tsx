@@ -26,14 +26,15 @@ function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
   const handleClick = () => {
     setWatches([]);
     setQuery("");
+    document.querySelector("input.active")?.classList.remove("active");
   };
 
   return (
     <Container aria-label="Fechar a lista da pesquisa" onClick={handleClick}>
       <Card>
         {watchesDisplayed.map(({ _id, model, brand, desc, image }) => (
-          <a key={_id} onClick={() => handlePush(_id)}>
-            <li>
+          <li key={_id}>
+            <a onClick={() => handlePush(_id)}>
               <Image
                 src={image}
                 width={100}
@@ -49,8 +50,8 @@ function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
                 <span>{desc}</span>
               </div>
               <ArrowUp />
-            </li>
-          </a>
+            </a>
+          </li>
         ))}
       </Card>
     </Container>

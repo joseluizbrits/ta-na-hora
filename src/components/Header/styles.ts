@@ -17,4 +17,16 @@ export const Container = styled.header`
     align-items: center;
     gap: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 20px 40px;
+  }
+
+  @media screen and (max-width: 576px) {
+    padding: 20px 20px;
+
+    a {
+      display: flex;
+    }
+  }
 `;

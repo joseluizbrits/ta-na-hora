@@ -43,6 +43,24 @@ const GlobalStyles = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  @media screen and (max-width: 1080px) {
+    main {
+      padding: 64px 64px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    main {
+      padding: 64px 40px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    main {
+      padding: 64px 20px;
+    }
+  }
 `;
 
 export default GlobalStyles;

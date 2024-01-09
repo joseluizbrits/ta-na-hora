@@ -23,7 +23,7 @@ export const Card = styled.ul`
   left: 0;
   z-index: 10;
 
-  a + a li {
+  li + li {
     border-top: 1px solid var(--grayShadow);
   }
 
@@ -31,7 +31,9 @@ export const Card = styled.ul`
     padding: 16px 0;
     margin: 0 16px;
     cursor: pointer;
+  }
 
+  a {
     display: flex;
     gap: 16px;
   }
@@ -62,5 +64,37 @@ export const Card = styled.ul`
   svg {
     align-self: flex-start;
     margin: 10px;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: calc(100vw - 273px);
+    left: auto;
+    right: 86px;
+
+    div :first-child {
+      font-size: 1.25rem;
+    }
+
+    div :last-child {
+      font-size: 0.875rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: calc(100vw - 225px);
+
+    div :first-child {
+      font-size: 1rem;
+    }
+
+    div :last-child {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    width: calc(100vw - 43px);
+    top: 56px;
+    right: -56px;
   }
 `;

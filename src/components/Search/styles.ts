@@ -33,4 +33,56 @@ export const Container = styled.div`
   input:focus-visible {
     outline: none;
   }
+
+  button {
+    cursor: auto;
+  }
+
+  @media screen and (max-width: 992px) {
+    background-color: transparent;
+    width: 85px;
+
+    input {
+      min-width: 0;
+      width: 0;
+      opacity: 0.5;
+
+      position: absolute;
+      top: -2px;
+      right: 86px;
+
+      transition: 0.3s ease;
+    }
+
+    input.active {
+      width: calc(100vw - 273px);
+      padding: 8px 20px;
+      box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
+      opacity: 1;
+
+      position: absolute;
+      top: -2px;
+      right: 86px;
+    }
+
+    button {
+      margin-top: -4px;
+      padding: 10px 20px;
+      border-radius: 2px;
+      background-color: var(--grayShadow);
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    input.active {
+      width: calc(100vw - 225px);
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    input.active {
+      width: calc(100vw - 185px);
+    }
+  }
 `;
