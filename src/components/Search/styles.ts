@@ -9,17 +9,24 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
+  position: relative;
+
   input {
     font-size: 1rem;
     color: var(--bg);
-
-    border: none;
     min-width: 300px;
     height: 100%;
+
+    border: none;
+    background-image: none;
   }
 
   input::placeholder {
     color: var(--gray);
+  }
+
+  input::-webkit-search-cancel-button {
+    display: none;
   }
 
   input:focus,
