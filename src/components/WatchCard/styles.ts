@@ -12,22 +12,36 @@ export const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 260px;
+  border-radius: 2px;
   cursor: pointer;
+
+  /* Skeleton */
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
 
   img {
     object-fit: cover;
     border-radius: 2px;
   }
 
-  &:hover {
-    div {
-      height: 100%;
-      pointer-events: all;
-    }
+  @media screen and (min-width: 1080px) {
+    &:hover {
+      div {
+        height: 100%;
+        pointer-events: all;
+      }
 
-    span,
-    svg {
-      opacity: 1;
+      span,
+      svg {
+        opacity: 1;
+      }
     }
   }
 `;
