@@ -28,9 +28,9 @@ export const Card = styled.ul`
   }
 
   li {
-    padding: 16px 0;
-    margin: 0 16px;
+    padding: 16px;
     cursor: pointer;
+    transition: 0.3s ease;
   }
 
   a {
@@ -64,6 +64,12 @@ export const Card = styled.ul`
   svg {
     align-self: flex-start;
     margin: 10px;
+  }
+
+  @media screen and (min-width: 992px) {
+    li:hover {
+      background-color: var(--grayShadow);
+    }
   }
 
   @media screen and (max-width: 992px) {

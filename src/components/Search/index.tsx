@@ -34,10 +34,10 @@ function Search() {
   return (
     <Container>
       <input
-        ref={inputRef}
         type="search"
         placeholder="Encontre o seu relógio"
         className={poppins.className}
+        ref={inputRef}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

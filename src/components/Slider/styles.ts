@@ -24,7 +24,7 @@ export const SliderContainer = styled.div`
     width: 100px;
     height: 40px;
     border-radius: 2px;
-    background-color: var(--secundary);
+    background-color: var(--secondary);
     box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
 
     position: absolute;

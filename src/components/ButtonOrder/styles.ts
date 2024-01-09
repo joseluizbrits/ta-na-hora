@@ -11,6 +11,6 @@ export const ButtonWrapper = styled.button`
     font-size: 1.25rem;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
-    color: var(--secundary);
+    color: var(--secondary);
   }
 `;

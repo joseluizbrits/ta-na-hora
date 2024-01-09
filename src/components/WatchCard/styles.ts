@@ -13,12 +13,14 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: 260px;
   border-radius: 2px;
+  overflow: hidden;
   cursor: pointer;
 
   /* Skeleton */
   background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
   background-size: 200% 100%;
   animation: 1.5s shine linear infinite;
+  animation-delay: 0.3s;
 
   @keyframes shine {
     to {
@@ -29,10 +31,15 @@ export const ImageWrapper = styled.div`
   img {
     object-fit: cover;
     border-radius: 2px;
+    transition: 0.3s ease;
   }
 
   @media screen and (min-width: 1080px) {
     &:hover {
+      img {
+        scale: 1.1;
+      }
+
       div {
         height: 100%;
         pointer-events: all;
@@ -49,7 +56,7 @@ export const ImageWrapper = styled.div`
 export const Shadow = styled.div`
   width: 100%;
   height: 0;
-  background-color: var(--secundaryShadow);
+  background-color: var(--secondaryShadow);
 
   display: flex;
   justify-content: center;

@@ -9,4 +9,8 @@ export const Container = styled.div`
   gap: 40px;
 
   position: relative;
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  }
 `;

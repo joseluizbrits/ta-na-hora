@@ -10,6 +10,8 @@ export const Wrapp = styled.div`
     display: block;
     width: 40px;
     height: 40px;
+    border-radius: 8px;
+    transition: 0.3s ease;
   }
 
   svg {
@@ -34,5 +36,11 @@ export const Wrapp = styled.div`
   div span {
     font-size: 0.875rem;
     color: var(--white);
+  }
+
+  @media screen and (min-width: 1080px) {
+    a:hover {
+      background-color: var(--grayShadow);
+    }
   }
 `;

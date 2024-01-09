@@ -4,8 +4,8 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --white: #FFFFFF;
     --primary: #001542;
-    --secundary: #FFB30D;
-    --secundaryShadow: rgba(255, 179, 13, 0.7);
+    --secondary: #FFB30D;
+    --secondaryShadow: rgba(255, 179, 13, 0.7);
     --warning: #FF2D2D;
     --gray: #A6A6A6;
     --grayShadow: rgba(166, 166, 166, 0.25);

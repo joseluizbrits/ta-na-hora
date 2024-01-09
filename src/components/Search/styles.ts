@@ -57,6 +57,7 @@ export const Container = styled.div`
     input.active {
       width: calc(100vw - 273px);
       padding: 8px 20px;
+      border-radius: 2px;
       box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
       opacity: 1;
 
@@ -83,6 +84,11 @@ export const Container = styled.div`
   @media screen and (max-width: 576px) {
     input.active {
       width: calc(100vw - 185px);
+      padding: 8px 16px;
+    }
+
+    input::placeholder {
+      font-size: 0.875rem;
     }
   }
 `;

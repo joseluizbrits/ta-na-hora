@@ -14,7 +14,7 @@ interface ISearchDropdown {
 }
 
 function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
-  let watchesDisplayed = watches.slice(0, 3);
+  let watchesDisplayed = watches.slice(0, 5);
   const router = useRouter();
 
   const handlePush = (id: string) => {
