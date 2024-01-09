@@ -14,7 +14,12 @@ import ButtonDelete from "../ButtonDelete";
 function BagItem() {
   const { getBag } = useBag();
 
-  if (getBag().length === 0) return <div>Sua sacola está vazia</div>;
+  if (getBag().length === 0)
+    return (
+      <div style={{ color: "var(--gray)", letterSpacing: "0.05rem" }}>
+        Sua sacola está vazia...
+      </div>
+    );
 
   return (
     <Container>

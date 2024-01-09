@@ -9,8 +9,8 @@ const GlobalStyles = createGlobalStyle`
     --warning: #FF2D2D;
     --gray: #A6A6A6;
     --grayShadow: rgba(166, 166, 166, 0.25);
-    --bg: #242B3A 
-    --transparent: rgba(36, 43, 58, 0.15)
+    --bg: #242B3A;
+    --transparent: rgba(36, 43, 58, 0.15);
   }
 
  * {

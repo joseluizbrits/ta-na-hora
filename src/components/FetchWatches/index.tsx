@@ -16,5 +16,10 @@ export async function FetchWatches({ brand }: { brand?: string }) {
         )}
       </>
     );
-  else return <div>Nenhum relógio foi encontrado...</div>;
+  else
+    return (
+      <div style={{ color: "var(--gray)", letterSpacing: "0.05rem" }}>
+        Nenhum relógio foi encontrado...
+      </div>
+    );
 }

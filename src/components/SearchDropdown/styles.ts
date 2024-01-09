@@ -23,24 +23,26 @@ export const Card = styled.ul`
   left: 0;
   z-index: 10;
 
-  li {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-    cursor: pointer;
+  a + a li {
+    border-top: 1px solid var(--grayShadow);
   }
 
-  li + li {
-    border-top: 1px solid var(--grayShadow);
+  li {
+    padding: 16px 0;
+    margin: 0 16px;
+    cursor: pointer;
+
+    display: flex;
+    gap: 16px;
   }
 
   img {
     object-fit: cover;
+    border-radius: 2px;
   }
 
-  span {
-    display: block;
+  div {
+    flex: 1;
   }
 
   div :first-child {
@@ -51,6 +53,10 @@ export const Card = styled.ul`
   div :last-child {
     font-size: 0.75rem;
     color: var(--bg);
+  }
+
+  span {
+    display: block;
   }
 
   svg {
