@@ -31,5 +31,7 @@ export const Select = styled.select`
   border: 1px solid var(--gray);
   border-radius: 2px;
   background-image: none;
+  background: none;
   cursor: pointer;
+  z-index: 1;
 `;

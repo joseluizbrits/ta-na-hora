@@ -38,6 +38,7 @@ function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
                 src={image}
                 width={100}
                 height={80}
+                sizes="10vw"
                 priority
                 alt={`Relógio ${brand} ${model}`}
               />

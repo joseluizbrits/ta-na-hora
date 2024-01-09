@@ -6,6 +6,12 @@ export const Wrapp = styled.div`
 
   position: relative;
 
+  a {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
   svg {
     position: absolute;
     top: -3px;
