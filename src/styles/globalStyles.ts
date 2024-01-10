@@ -27,7 +27,7 @@ const GlobalStyles = createGlobalStyle`
 
   main {
     padding: 64px 160px;
-    min-height: 50vw;
+    min-height: calc(100vh - 80px - 160px);;
   }
 
   a {
