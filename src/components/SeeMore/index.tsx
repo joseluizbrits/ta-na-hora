@@ -1,16 +1,15 @@
-import { titleStyle } from "./styles";
+"use client";
 
-import { ReactNode } from "react";
+import { Container } from "./styles";
 import { cormorant } from "@/lib/fonts";
+import { ReactNode } from "react";
 
 function SeeMore({ children, brand }: { children: ReactNode; brand: string }) {
   return (
-    <div>
-      <h2 style={titleStyle} className={cormorant.className}>
-        Veja mais relógios {brand}:
-      </h2>
+    <Container>
+      <h2 className={cormorant.className}>Veja mais relógios {brand}:</h2>
       {children}
-    </div>
+    </Container>
   );
 }
 

@@ -46,6 +46,34 @@ export const Card = styled.div`
     border: 1px solid var(--grayShadow);
     margin-bottom: 12px;
   }
+
+  @media screen and (max-width: 992px) {
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 120px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    ul {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    li {
+      max-width: 100%;
+    }
+
+    li h3 {
+      font-size: 1rem;
+    }
+
+    li span {
+      min-width: fit-content;
+      text-align: end;
+    }
+  }
 `;
 
 export const Benefits = styled.div`
@@ -69,5 +97,36 @@ export const Benefits = styled.div`
     font-size: 0.875rem;
     color: var(--gray);
     padding-left: 16px;
+  }
+
+  @media screen and (max-width: 576px) {
+    justify-content: start;
+
+    div {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    div :first-child {
+      align-items: center;
+    }
+
+    div > div {
+      flex-direction: row-reverse;
+    }
+
+    div span {
+      padding-left: 0;
+      padding-right: 16px;
+      font-size: 0.75rem;
+    }
+
+    div + div {
+      padding-top: 12px;
+    }
+
+    div + div::before {
+      display: none;
+    }
   }
 `;

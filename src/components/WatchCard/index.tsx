@@ -19,7 +19,9 @@ function WatchCard({ watch }: { watch: IWatch }) {
             src={watch.image}
             priority
             fill
-            sizes="50vw"
+            sizes="(max-width: 576px) 100vw,
+              (max-width: 1080px) 70vw,
+              50vw"
             alt="Relógio Rolex Cellini Time"
           />
           <Shadow>
