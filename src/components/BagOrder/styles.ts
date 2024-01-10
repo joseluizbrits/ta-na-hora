@@ -14,6 +14,8 @@ export const Card = styled.div`
   position: sticky;
   top: 120px;
 
+  animation: show 0.6s ease forwards;
+
   ul {
     border-bottom: 1px solid var(--grayShadow);
   }
@@ -50,5 +52,14 @@ export const Card = styled.div`
     font-weight: 500;
     font-size: 1.5rem;
     color: var(--bg);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+    gap: 24px;
+
+    button span {
+      font-size: 1rem;
+    }
   }
 `;

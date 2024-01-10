@@ -12,9 +12,17 @@ export const Container = styled.div`
     width: 28px;
     font-size: 1.75rem;
     color: var(--bg);
+    border-radius: 50%;
+
+    transition: 0.3s ease;
   }
 
-  #decrease {
-    margin-top: -2px;
+  button:hover {
+    background-color: var(--grayShadow);
+  }
+
+  @media screen and (max-width: 576px) {
+    width: max-content;
+    margin: 0 auto;
   }
 `;

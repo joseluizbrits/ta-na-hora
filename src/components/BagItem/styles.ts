@@ -12,6 +12,7 @@ export const Card = styled.div`
   border-radius: 2px;
 
   position: relative;
+  animation: show 0.6s ease forwards;
 
   tr > :first-child {
     min-width: 320px;
@@ -38,15 +39,60 @@ export const Card = styled.div`
     gap: 24px;
   }
 
+  td a div {
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
   td img {
     margin-top: 20px;
     object-fit: cover;
-    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+
+  @media screen and (min-width: 1080px) {
+    td a:hover {
+      img {
+        scale: 1.1;
+      }
+
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1520px) {
+    table {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media screen and (max-width: 576px) {
+    tr > :first-child {
+      min-width: fit-content;
+    }
+
+    td {
+      min-width: fit-content;
+    }
+
+    td a {
+      gap: 16px;
+    }
   }
 `;
 
 export const Text = styled.div`
   display: grid;
+
+  span {
+    transition: 0.3s ease;
+  }
 
   :first-child {
     font-weight: 600;
@@ -59,5 +105,15 @@ export const Text = styled.div`
     font-size: 0.875rem;
     max-width: 20ch;
     color: var(--bg);
+  }
+
+  @media screen and (max-width: 576px) {
+    :first-child {
+      font-size: 0.875rem;
+    }
+
+    :last-child {
+      font-size: 0.75rem;
+    }
   }
 `;

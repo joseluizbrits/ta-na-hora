@@ -33,6 +33,8 @@ export const SliderContainer = styled.div`
     z-index: 1;
     cursor: pointer;
 
+    transition: 0.3s ease;
+
     &::after {
       content: "";
       display: block;
@@ -45,6 +47,10 @@ export const SliderContainer = styled.div`
   .swiper-button-next {
     right: 0;
 
+    &:hover {
+      translate: 12px;
+    }
+
     &::after {
       rotate: 180deg;
     }
@@ -52,5 +58,15 @@ export const SliderContainer = styled.div`
 
   .swiper-button-disabled {
     display: none;
+  }
+
+  @media screen and (min-width: 1080px) {
+    .swiper-button-prev:hover {
+      translate: -12px;
+    }
+
+    .swiper-button-next:hover {
+      translate: 12px;
+    }
   }
 `;

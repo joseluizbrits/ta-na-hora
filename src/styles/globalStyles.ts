@@ -44,6 +44,17 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  @keyframes show {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @media screen and (max-width: 1080px) {
     main {
       padding: 64px 64px;

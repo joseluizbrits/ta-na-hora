@@ -10,9 +10,12 @@ import Image from "next/image";
 import { useBag } from "@/hooks/useBag";
 import { toCurrencyBRL } from "@/utils/toCurrencyBRL";
 import ButtonDelete from "../ButtonDelete";
+import useMedia from "@/hooks/useMedia";
 
 function BagItem() {
   const { getBag } = useBag();
+
+  const desktop = useMedia("(min-width: 992px)");
 
   if (getBag().length === 0)
     return (
@@ -29,9 +32,9 @@ function BagItem() {
             <tbody>
               <tr>
                 <th style={{ textAlign: "start" }}>Relógio</th>
-                <th>Preço</th>
-                <th>Quantidade</th>
-                <th>Total</th>
+                {desktop && <th>Preço</th>}
+                <th>{desktop ? "Quantidade" : "Qtd."}</th>
+                {desktop && <th>Total</th>}
               </tr>
               <tr>
                 <td>
@@ -39,7 +42,8 @@ function BagItem() {
                     <div>
                       <Image
                         src={watch.image}
-                        width={100}
+                        width={desktop ? 100 : 64}
+                        sizes="33vw"
                         height={80}
                         priority
                         alt={`Relógio ${watch.brand} ${watch.model}`}
@@ -53,11 +57,11 @@ function BagItem() {
                     </Text>
                   </Link>
                 </td>
-                <td>{toCurrencyBRL(watch.price)}</td>
+                {desktop && <td>{toCurrencyBRL(watch.price)}</td>}
                 <td>
                   <BagQuantity watch={watch} amount={amount} />
                 </td>
-                <td>{toCurrencyBRL(watch.price * amount)}</td>
+                {desktop && <td>{toCurrencyBRL(watch.price * amount)}</td>}
               </tr>
             </tbody>
           </table>

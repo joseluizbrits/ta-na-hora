@@ -8,6 +8,8 @@ export const Container = styled.div`
   grid-template-columns: minmax(400px, 1fr) 1fr;
   gap: 28px;
 
+  animation: show 0.6s ease forwards;
+
   @media screen and (max-width: 992px) {
     grid-template-columns: 1fr;
   }
