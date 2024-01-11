@@ -6,9 +6,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "1023",
+        protocol: "https",
+        hostname: "api-ta-na-hora.vercel.app",
         pathname: "/images/**",
       },
     ],
