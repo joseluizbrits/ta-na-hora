@@ -14,7 +14,7 @@ function Search() {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const media = useMedia("(max-width: 992px)");
+  const mobile = useMedia("(max-width: 992px)");
   const { getWatches } = useWatch();
 
   useMemo(() => {
@@ -26,9 +26,13 @@ function Search() {
   }, [getWatches, query]);
 
   const handleInputMobile = () => {
-    if (!media) return;
+    if (!mobile) return;
 
-    inputRef.current?.classList.toggle("active");
+    const search = inputRef.current;
+    search?.classList.toggle("active");
+
+    setWatchesSearch([]);
+    setQuery("");
   };
 
   return (

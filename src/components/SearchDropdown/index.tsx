@@ -14,7 +14,7 @@ interface ISearchDropdown {
 }
 
 function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
-  let watchesDisplayed = watches.slice(0, 5);
+  let watchesDisplayed = watches.slice(0, 3);
   const router = useRouter();
 
   const handlePush = (id: string) => {
@@ -39,7 +39,9 @@ function SearchDropdown({ watches, setWatches, setQuery }: ISearchDropdown) {
                 src={image}
                 width={100}
                 height={80}
-                sizes="10vw"
+                sizes="(max-width: 576px) 45vw,
+              (max-width: 1080px) 25vw,
+              15vw"
                 priority
                 alt={`Relógio ${brand} ${model}`}
               />

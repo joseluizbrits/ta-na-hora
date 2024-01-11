@@ -47,10 +47,6 @@ export const SliderContainer = styled.div`
   .swiper-button-next {
     right: 0;
 
-    &:hover {
-      translate: 12px;
-    }
-
     &::after {
       rotate: 180deg;
     }

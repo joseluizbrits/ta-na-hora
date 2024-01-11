@@ -92,7 +92,7 @@ export const Content = styled.div`
   padding-top: 12px;
   padding-bottom: 20px;
 
-  h2 {
+  h3 {
     font-weight: 600;
     font-size: 1.5rem;
     color: var(--primary);

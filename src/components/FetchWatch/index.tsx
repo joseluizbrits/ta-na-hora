@@ -21,7 +21,9 @@ export async function FetchWatch({ id }: { id: string }) {
           </SeeMore>
         </>
       ) : (
-        <span>Relógio não encontrado...</span>
+        <div style={{ color: "var(--gray)", letterSpacing: "0.05rem" }}>
+          Relógio não encontrado...
+        </div>
       )}
     </>
   );

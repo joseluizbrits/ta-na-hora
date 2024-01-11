@@ -31,9 +31,7 @@ function WatchCard({ watch }: { watch: IWatch }) {
         </ImageWrapper>
       </Link>
       <Content>
-        <h2>
-          {watch.brand} {watch.model}
-        </h2>
+        <h3>{`${watch.brand} ${watch.model}`}</h3>
         <p>{watch.desc}</p>
         <span>{toCurrencyBRL(watch.price)}</span>
       </Content>

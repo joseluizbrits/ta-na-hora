@@ -17,8 +17,10 @@ export const Container = styled.div`
     transition: 0.3s ease;
   }
 
-  button:hover {
-    background-color: var(--grayShadow);
+  @media screen and (min-width: 1080px) {
+    button:hover {
+      background-color: var(--grayShadow);
+    }
   }
 
   @media screen and (max-width: 576px) {

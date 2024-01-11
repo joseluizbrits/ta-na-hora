@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background-color: var(--bg);
+    background-color: var(--primary);
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
   main {
     padding: 64px 160px;
     min-height: calc(100vh - 80px - 160px);;
+    background-color: var(--bg);
   }
 
   a {
